@@ -19,6 +19,14 @@ class CustomerSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
+        // Customers need a group, so a fresh database gets a few first
+        if (Group::count() === 0) {
+            foreach (['Retail', 'Wholesale', 'Online'] as $name) {
+                $group = new Group;
+                $group->grp_name = $name;
+                $group->save();
+            }
+        }
         $groupIds = Group::pluck('grp_id')->toArray();
         for ($i = 1; $i <= 100; $i++) {
             # code...
