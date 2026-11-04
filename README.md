@@ -1,6 +1,6 @@
 # Laravel CRUD Fundamentals
 
-A Laravel 10 app that works through the framework's core features in one codebase: full CRUD with soft deletes, Eloquent relations, Blade components, sessions, seeding and every common controller style. It also has a multi-page front-end site built from reusable components.
+A Laravel 12 app that works through the framework's core features in one codebase: full CRUD with soft deletes, Eloquent relations, Blade components, sessions, seeding and every common controller style. It also has a multi-page front-end site built from reusable components.
 
 ## Features
 
@@ -17,7 +17,7 @@ A Laravel 10 app that works through the framework's core features in one codebas
 
 ## Tech stack
 
-PHP 8.2+, Laravel 10, MySQL (or SQLite), Blade and Bootstrap 5.
+PHP 8.2+, Laravel 12, MySQL (or SQLite), Blade and Bootstrap 5.
 
 ## Getting started
 
