@@ -25,19 +25,18 @@ class GroupController extends Controller
                 'grp_logo' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
             ]
         );
-        // Handle upload file
+        //Insert Query
+        $group = new Group;
+        $group->grp_name = $request['grp_name'];
+        $group->grp_desc = $request['grp_desc'];
+
+        // Handle upload file. The logo is optional, so a group saves without one too.
         if ($request->hasFile('grp_logo')) {
             $file = $request->file('grp_logo');
             $filename = time() . "_" . $file->getClientOriginalName();
-            $path = $file->storeAs('group-logos', $filename, 'public'); //path storage folder
-
-            //Insert Query
-            $group = new Group;
-            $group->grp_name = $request['grp_name'];
-            $group->grp_desc = $request['grp_desc'];
-            $group->grp_logo = $path;
-            $group->save();
+            $group->grp_logo = $file->storeAs('group-logos', $filename, 'public'); //path storage folder
         }
+        $group->save();
         return redirect('/group/view');
     }
 
